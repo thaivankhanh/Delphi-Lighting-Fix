@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/01/22 23:24:40.000.507,=F:\Users\KHANH\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/01/22 23:25:06.000.372,=F:\Users\KHANH\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/01/22 23:32:29.000.147,=F:\Users\KHANH\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/20 19:01:46.000.290,=F:\Users\KHANH\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/26 00:43:30.000.675,=F:\Users\KHANH\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/31 09:24:15.000.396,=F:\Users\KHANH\Projects\Unit4.pas</Transaction>
+    <Transaction>2022/08/31 09:35:06.000.970,F:\Users\KHANH\Projects\Unit4.fmx=F:\Users\KHANH\Coding\Delphi XE\Graphics 3D\Unit4.fmx</Transaction>
+    <Transaction>2022/08/31 09:35:06.000.970,F:\Users\KHANH\Projects\Unit4.pas=F:\Users\KHANH\Coding\Delphi XE\Graphics 3D\Unit4.pas</Transaction>
+    <Transaction>2022/08/31 09:35:29.000.669,F:\Users\KHANH\Projects\Project1.dproj=F:\Users\KHANH\Coding\Delphi XE\Graphics 3D\Shadow.dproj</Transaction>
+    <Transaction>2022/09/10 00:06:46.000.638,F:\Users\KHANH\Coding\Delphi XE\Graphics 3D\Shadow.dproj=F:\Users\KHANH\Coding\Delphi XE\Graphics 3D\Lighting.dproj</Transaction>
+    <Transaction>2022/09/10 00:18:46.000.739,=F:\Users\KHANH\Coding\Delphi XE\Graphics 3D\FMX.Materials.pas</Transaction>
+    <Transaction>2022/09/14 12:33:44.024,F:\Users\KHANH\Coding\Delphi XE\Graphics 3D\FMX.Materials.pas=</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
