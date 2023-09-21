@@ -1,4 +1,4 @@
-# Delphi lighting fix
+# Delphi specular lighting fix
 
 I see that FMX TLightMaterial specular is not correct, as report here since 2015:
 
@@ -16,7 +16,7 @@ procedure TLightMaterial.DoApply(const Context: TContext3D);
 3847: Context.SetShaderVariable('EyePos', [Context.CurrentCameraMatrix.M[3]]);
 ```
 
-But in this context, CurrentCameraMatrix.M[3] is not absolute position of current camera, as codes below:
+'EyePos' should be absolute position of current camera, but in this context, CurrentCameraMatrix.M[3] is not, as codes below:
 
 ```
 Unit FMX.Controls3D; Line 2681:
@@ -51,9 +51,32 @@ So I copy file FMX.Materials.pas to current Project folder, modify line 3847 as 
 3847: Context.SetShaderVariable('EyePos', [Context.CurrentCameraInvMatrix.M[3]]);
 ```
 
+(Change CurrentCameraMatrix to CurrentCameraInvMatrix)
+
 Rebuild the project, and result look good:
 
 ![FMX Specular OK](https://github.com/thaivankhanh/Delphi-Lighting-Fix/assets/42743399/8f3985ea-2e74-421f-b5a4-be63a054ea48)
+
+Why Context.CurrentCameraInvMatrix.M[3] is Camera Absolute Position (EyePos)?
+
+We known:
+
+CameraAbsolutePosition = Vector(0,0,0,1) * CurrentCameraInvMatrix
+
+```
+class operator TMatrix3D.Multiply(const AVector: TVector3D;
+const AMatrix: TMatrix3D): TVector3D;
+begin
+Result.X := (AVector.X * AMatrix.m11) + (AVector.Y * AMatrix.m21) + (AVector.Z * AMatrix.m31) + (AVector.W * AMatrix.m41);
+Result.Y := (AVector.X * AMatrix.m12) + (AVector.Y * AMatrix.m22) + (AVector.Z * AMatrix.m32) + (AVector.W * AMatrix.m42);
+Result.Z := (AVector.X * AMatrix.m13) + (AVector.Y * AMatrix.m23) + (AVector.Z * AMatrix.m33) + (AVector.W * AMatrix.m43);
+Result.W := (AVector.X * AMatrix.m14) + (AVector.Y * AMatrix.m24) + (AVector.Z * AMatrix.m34) + (AVector.W * AMatrix.m44);
+end;
+```
+
+So when AVector is (0,0,0,1), Result is (AMatrix.m41, AMatrix.m42, AMatrix.m43, AMatrix.m44), that is AMatrix.M[3]
+
+CameraAbsolutePosition = Vector(0,0,0,1) * CurrentCameraInvMatrix = CurrentCameraInvMatrix.M[3]
 
 I've reported this problem here:
 
