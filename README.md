@@ -4,7 +4,7 @@ I see that FMX TLightMaterial specular is not correct, as report here since 2015
 
 https://quality.embarcadero.com/browse/RSP-10000 
 
-But until now (10.4.2) it has not been fixed. As screenshot below:
+But until now (10.4.2) it has not been fixed. As screenshot below (the red cube is light source position):
 
 ![FMX Specular wrong](https://github.com/thaivankhanh/Delphi-Lighting-Fix/assets/42743399/16c2319a-c4bd-4719-8b50-6aa4cb334aac)
 
