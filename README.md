@@ -3,7 +3,7 @@
 I see that FMX TLightMaterial specular is not correct, as report here since 2015:
 https://quality.embarcadero.com/browse/RSP-10000 
 But until now (10.4.2) it has not been fixed. As screenshot below:
-
+![FMX Specular wrong](FMX Specular wrong.png)
 
 I think that the Camera (eye) Position is not set correct, so I look at unit FMX.Materials.pas and found this line:
 procedure TLightMaterial.DoApply(const Context: TContext3D);
