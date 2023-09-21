@@ -38,9 +38,7 @@ begin
   ZAxis := ADirection.Normalize;
   XAxis := ACeiling.CrossProduct(ZAxis).Normalize;
   YAxis := ZAxis.CrossProduct(XAxis);
-
   ...
-
   Result.m41 := - XAxis.DotProduct(ASource);
   Result.m42 := - YAxis.DotProduct(ASource);
   Result.m43 := - ZAxis.DotProduct(ASource);
@@ -56,3 +54,7 @@ So I copy file FMX.Materials.pas to current Project folder, modify line 3847 as 
 Rebuild the project, and result look good:
 
 ![FMX Specular OK](https://github.com/thaivankhanh/Delphi-Lighting-Fix/assets/42743399/8f3985ea-2e74-421f-b5a4-be63a054ea48)
+
+I've reported this problem here:
+
+https://quality.embarcadero.com/browse/RSP-39430
