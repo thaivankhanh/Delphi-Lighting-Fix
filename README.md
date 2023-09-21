@@ -8,7 +8,7 @@ But until now (10.4.2) it has not been fixed. As screenshot below (the red cube 
 
 ![FMX Specular wrong](https://github.com/thaivankhanh/Delphi-Lighting-Fix/assets/42743399/16c2319a-c4bd-4719-8b50-6aa4cb334aac)
 
-I think that the Camera (eye) Position is not set correct, so I look at unit FMX.Materials.pas and found this line:
+Specular is light reflection from light source to object face to our eyes, I think that the Camera (eye) Position in this case is not set correct, so I look at unit FMX.Materials.pas and found this line:
 
 ```
 procedure TLightMaterial.DoApply(const Context: TContext3D);
